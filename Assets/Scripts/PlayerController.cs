@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
 
+    public string inputID;
     public Camera mainCamera;
     public Camera hoodCamera;
     public KeyCode swtichKey;
@@ -28,8 +29,8 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector3.forward * Time.deltaTime * 20);
 
         // This is where we get player input
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal" + inputID);
+        forwardInput = Input.GetAxis("Vertical" + inputID);
 
         // Moves the car based on vertical input
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
