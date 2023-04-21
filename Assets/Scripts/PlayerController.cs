@@ -15,14 +15,8 @@ public class PlayerController : MonoBehaviour
     public Camera hoodCamera;
     public KeyCode swtichKey;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //transform.Translate(0, 0, 1);
         //transform.Translate(Vector3.forward);
