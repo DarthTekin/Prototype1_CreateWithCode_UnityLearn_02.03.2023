@@ -16,10 +16,12 @@ public class PlayerController : MonoBehaviour
     public Camera hoodCamera;
     public KeyCode swtichKey;
     private Rigidbody playerRb;
+    [SerializeField] GameObject centerOfMass;
 
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerRb.centerOfMass = centerOfMass.transform.position;
     }
 
     // Update is called once per frame
