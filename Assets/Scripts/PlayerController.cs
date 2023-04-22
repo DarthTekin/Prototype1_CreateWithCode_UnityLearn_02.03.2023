@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     // Private Variables
-    //[SerializeField] float speed = 10.0f;
+    [SerializeField] float speed;
     [SerializeField] float horsePower = 0;
     static float turnSpeed = 25.0f;
     private float horizontalInput;
