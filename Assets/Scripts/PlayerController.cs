@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
         // Moves the car based on vertical input
         //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         playerRb.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
+
+        speed = Mathf.RoundToInt(playerRb.velocity.magnitude * 2.237f);
+        speedometerText.SetText("Speed: " + speed + "mph");
         
         // Rotates the car based on horizontal input
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
