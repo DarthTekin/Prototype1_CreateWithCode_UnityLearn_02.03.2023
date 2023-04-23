@@ -3645,12 +3645,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   horsePower: 100000
+  rpm: 0
   inputID: 2
   mainCamera: {fileID: 2060561486}
   hoodCamera: {fileID: 1883403095}
   swtichKey: 303
   centerOfMass: {fileID: 1635298092}
   speedometerText: {fileID: 1072120760}
+  rpmText: {fileID: 1175805307}
 --- !u!54 &1232830754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4132,12 +4134,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   horsePower: 0
+  rpm: 0
   inputID: 1
   mainCamera: {fileID: 534669904}
   hoodCamera: {fileID: 472768528}
   swtichKey: 102
   centerOfMass: {fileID: 1037962119}
   speedometerText: {fileID: 1072120760}
+  rpmText: {fileID: 1175805307}
 --- !u!54 &1499705377
 Rigidbody:
   m_ObjectHideFlags: 0

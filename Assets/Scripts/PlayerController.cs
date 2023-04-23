@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     // Private Variables
     [SerializeField] float speed;
     [SerializeField] float horsePower = 0;
+    [SerializeField] float rpm;
     private float turnSpeed = 10.0f;
     private float horizontalInput;
     private float forwardInput;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     [SerializeField] GameObject centerOfMass;
     [SerializeField] TextMeshProUGUI speedometerText;
+    [SerializeField] TextMeshProUGUI rpmText;
 
     private void Start()
     {
@@ -41,12 +43,15 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         playerRb.AddRelativeForce(Vector3.forward * horsePower * forwardInput);
 
-        speed = Mathf.RoundToInt(playerRb.velocity.magnitude * 2.237f);
-        speedometerText.SetText("Speed: " + speed + "mph");
-        
         // Rotates the car based on horizontal input
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
         //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+
+        speed = Mathf.RoundToInt(playerRb.velocity.magnitude * 2.237f);
+        speedometerText.SetText("Speed: " + speed + "mph");
+
+        rpm = (speed % 30) * 40;
+        rpmText.SetText("RPM: " + rpm);
 
         if (Input.GetKeyDown(swtichKey))
         {
